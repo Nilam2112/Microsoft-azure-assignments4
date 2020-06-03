@@ -1,0 +1,371 @@
+
+Name:
+Last 4 digits ID: 3836
+Computer IP address:
+CSE 6331, Cloud Computing					
+
+
+Quiz April 6, Spring 2020   (c) DL, UTA, 2020
+
+
+  C&P means cut and paste only those relevant lines from your program(s) into this quiz.
+
+
+ 1.  I understand that I am on my honor during this quiz, I will not collaborate, use 
+     non-allowed sources, and I will not discuss or share this quiz with anyone for the next 
+     4 hours.
+     You MAY: use Google to search, use previous source code, 
+     YOU MAY NOT use:
+     Email, Facebook, Hangouts, IM, chats, Skype or ANY other human connection.
+
+     This is a timed test. Late tests will have points deducted for being late.
+     Very late tests will not be graded.
+
+     The second part of the test, you should electronically submit, you will need to copy and paste 
+     only those lines of code to implement that part of the test, usually a few (two to eight) lines of code. 
+     Place it immediately after the question.
+
+     Submit this Quiz (renamed) with code cut and pasted, ONLY text. DO NOT submit zips, binaries, libraries,
+     or anything other than text.
+
+     When any parts(questions) are complete complete, submit this test, you may make multiple submissions.
+
+ 2. Get files from this same folder.
+   
+ 3. Name your program/submission with your name and last digits of your ID.
+
+ 4. Using the cloud services provider, all functionality possible should be implemented on that provider.
+    (Of course, displaying web pages through a browser and the user interface is "local")
+
+ 5. Show a web page and interface (which resides on the cloud provider) with your name and 
+    student ID in large font at the top of every web page dispayed (for this quiz)
+    The cloud service provider is Microsoft Azure.
+
+Show and submit code:
+
+ 5. Please read part 5. above, again.
+
+ 6. Import the dataset into a Relational Data Base (SQL), a "hash" or an array. 
+    Please note that for some parts of the following you will need to create indexes (keys) appropriately.
+    You do NOT need to show us this part.
+
+ 7. Allow a user, through a web form, to give a "net" value, for example "pr", and a minimum and maximum "mag"
+    value, for example 3 to 6, and in a table, show the number of quakes for that net value and for that range
+    of mag, in increments of 1, that is, for this example show the number of quakes with mag from 3 to 4, 4 to 5,
+    and 5 to 6, for the net value "pr". (No "visualizing", no graphing necessary).
+
+    @app.route('/index1', methods=["POST", "GET"])
+def index1():
+    v1 = str(request.form.get('v1', ''))
+    v2 = int(request.form.get('v2', ''))
+    v3 = int(request.form.get('v3', ''))
+    
+    success = "SELECT  mag, count(mag) AS number  from (SELECT CASE when mag BETWEEN '0' and '1' then '0 to 1' WHEN mag between '1' and '2' then '1 to 2' WHEN mag between '2' and '3' then '2 to 3' WHEN mag between '3' and '4' then '3 to 4' WHEN mag between '4' and '5' then '4 to 5' ELSE '10+' END AS mag from QUAKES1 WHERE net =  '" + str(v1) + "' and mag between '" + str(v2) + "' and '" + str(v3) + "' ) T  GROUP BY T.mag"
+
+    cursor.execute(success)
+
+    result_set = cursor.fetchall()
+    state=[]
+    print(result_set)
+    for row in result_set:
+        state.append(row[0])
+        state.append(row[1])
+
+    return render_template('index.html', ci=state)
+<h4>
+                 List
+            </h4> <br>
+            <form action="/index1" method="post">
+                 <label> Net Value : </label> <input type="text" name="v1" ><br>
+                    <label> minimum range : </label> <input type="text" name="v2" ><br>
+                   <label> maximum range : </label> <input type="text" name="v3" >
+
+                <input type="submit" value="show list" class="btn btn-secondary">
+            </form>
+
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    <title>{% block title %}{% endblock %}  Home</title>
+    {% endblock %}
+</head>
+<body align="center">
+<header>
+<b>
+ <h1> neelam Makwana </h1>
+        <h1> 1001453836 </h1>
+</b>
+</header>
+
+
+<p>
+{% block content %}
+
+{% for city in ci %}
+ {{ city }}
+
+<br/>
+{% endfor %}
+<br/>
+
+
+</body>
+</html>
+
+
+ 8. Using what was done in the previous question, showing the same web form, please show a page,
+    followed by a horizontal bar chart on that page, which is at least 3/4 (75%) the width of the screen, 
+    which shows the same results as the previous question. Each bar should be in a different color, 
+    please show labels to the right of each bar.
+
+@app.route("/bar2", methods=["POST", "GET"])
+def bar2():
+     v1 = str(request.form.get('v1', ''))
+    v2 = int(request.form.get('v2', ''))
+    v3 = int(request.form.get('v3', ''))
+   
+
+    # query1 = "SELECT  latitude , count(latitude) AS number from (SELECT CASE when latitude BETWEEN '10' and '20' then '10 to 20' WHEN latitude between '20' and '30' then '20 to 30' WHEN latitude between '30' and '40' then '30 to 40' WHEN latitude between '40' and '50' then '40 to 50' ELSE '50+' END AS latitude from QUAKES1) T  GROUP BY T.latitude"
+    query1 = "SELECT  mag, count(mag) AS number  from (SELECT CASE when mag BETWEEN '0' and '1' then '0 to 1' WHEN mag between '1' and '2' then '1 to 2' WHEN mag between '2' and '3' then '2 to 3' WHEN mag between '3' and '4' then '3 to 4' WHEN mag between '4' and '5' then '4 to 5' ELSE '10+' END AS mag from QUAKES1 WHERE net =  '" + str(v1) + "' and mag between '" + str(v2) + "' and '" + str(v3) + "' ) T  GROUP BY T.mag"
+
+
+    cursor.execute(query1)
+    r1 = cursor.fetchall()
+    rows = ([['head1', 'Number of Earthquakes']])
+    for ele in r1:
+        rows.append([ele[0],ele[1]])
+
+    return render_template('bar_h.html', rows=rows)
+
+    <br>
+            <h4>
+                 Show a bar chart
+            </h4> <br>
+            <form action="/bar2" method="post">
+              <label> Net Value : </label> <input type="text" name="v1" ><br>
+                    <label> minimum range : </label> <input type="text" name="v2" ><br>
+                   <label> maximum range : </label> <input type="text" name="v3" >
+                <input type="submit" value="Show Bar Chart" class="btn btn-secondary">
+            </form>
+
+
+            <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link href="static/styles.css" rel="stylesheet">
+      <title>Bar Chart</title>
+  </head>
+  <body>
+    <div class="container">
+
+       <h1> neelam Makwana </h1>
+        <h1> 1001453836 </h1>
+
+      <br>
+
+      <center>
+          <div id="barchart" style="width: 900px; height: 500px;"></div>
+<!--            <div id="piechart" style="width: 900px; height: 500px;"></div>-->
+      </center>
+
+      <br>
+      <br>
+    </div>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+          google.charts.load('current', {'packages':['corechart']});
+          google.charts.setOnLoadCallback(drawChart);
+
+          function drawChart() {
+
+            var data = google.visualization.arrayToDataTable({{ rows|safe }});
+
+            var options = {
+                title: ' Bar chart ',
+                hAxis: {title: 'Number of Earthquakes'},
+                vAxis: {title: 'mag group'},
+                legend: 'none',
+                pointsVisible: true,
+                colors: ['green','red','yellow','blue','violet','orange','lightgray']
+
+            };
+            var chart = new google.visualization.BarChart(document.getElementById('barchart'));
+
+            chart.draw(data, options);
+
+
+          }
+        </script>
+  </body>
+</html>
+
+
+ 9. Similar, to the previous question, please show a page, followed by a pie chart on that page, 
+    which is half (50%) the width of the screen, which shows the same results as the previous question. 
+    Each pie slice should be in a different color, please show labels inside each slice.
+
+@app.route("/showpie2", methods=["POST", "GET"])
+def showpie2():
+     v1 = str(request.form.get('v1', ''))
+    v2 = int(request.form.get('v2', ''))
+    v3 = int(request.form.get('v3', ''))
+    
+    # query1 = "SELECT  latitude , count(latitude) AS number from (SELECT CASE when latitude BETWEEN '10' and '20' then '10 to 20' WHEN latitude between '20' and '30' then '20 to 30' WHEN latitude between '30' and '40' then '30 to 40' WHEN latitude between '40' and '50' then '40 to 50' ELSE '50+' END AS latitude from QUAKES1 where net ='" + str(net) + "') T  GROUP BY T.latitude"
+    query1 = "SELECT  mag, count(mag) AS number  from (SELECT CASE when mag BETWEEN '0' and '1' then '0 to 1' WHEN mag between '1' and '2' then '1 to 2' WHEN mag between '2' and '3' then '2 to 3' WHEN mag between '3' and '4' then '3 to 4' WHEN mag between '4' and '5' then '4 to 5' ELSE '10+' END AS mag from QUAKES1 WHERE net =  '" + str(v1) + "' and mag between '" + str(v2) + "' and '" + str(v3) + "' ) T  GROUP BY T.mag"
+
+    cursor.execute(query1)
+    r1 = cursor.fetchall()
+    rows = ([['head1', 'head2']])
+    for ele in r1:
+        rows.append([ele[0],ele[1]])
+
+    return render_template('showpie.html', rows=rows)
+
+         <br>
+            <h4>
+                 Show pie chart
+            </h4> <br>
+            <form action="/showpie2" method="post">
+              <label> Net Value : </label> <input type="text" name="v1" ><br>
+                    <label> minimum range : </label> <input type="text" name="v2" ><br>
+                   <label> maximum range : </label> <input type="text" name="v3" >
+                <input type="submit" value="Show pie" class="btn btn-secondary">
+            </form>
+            <br>
+
+            <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link href="static/styles.css" rel="stylesheet">
+      <title>Show</title>
+  </head>
+  <body>
+    <div class="container">
+
+        <h1> neelam Makwana </h1>
+        <h1> 1001453836 </h1>
+
+      <br>
+
+      <center>
+          <div id="piechart" style="width: 900px; height: 500px;"></div>
+      </center>
+
+      <br>
+      <br>
+    </div>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+          google.charts.load('current', {'packages':['corechart']});
+          google.charts.setOnLoadCallback(drawChart);
+
+          function drawChart() {
+
+            var data = google.visualization.arrayToDataTable({{ rows|safe }});
+
+            var options = {
+                title: ' Pie chart showing Number of Earthquakes in a given range',
+                pieSliceText: 'value',
+                legend: {position: 'labeled'}
+                {#colors: ['yellow','lightgray','orange']#}
+            };
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart.draw(data, options);
+          }
+        </script>
+  </body>
+</html>
+
+
+ 10. Allow a user, through a web form, to give a "net" value, for example "pr", and a minimum and maximum "nst" range, 
+     for example 10 to 18, and show a point chart (scatter chart) where the x axis are nst values, and the y axis are gap values,
+     please label the x and y axis. If the gap values are all greater than some minimum (for this example there are no gap values
+     less than 100), please re-origin the axis, DO NOT start at point 0,0 at the bottom left, you can origin at the minimum nst
+     and gap values, or some values "close" to those.)
+
+      v1 = str(request.form.get('v1', ''))
+    v2 = int(request.form.get('v2', ''))
+    v3 = int(request.form.get('v3', ''))
+    # query1 = "SELECT  latitude , count(latitude) AS number from (SELECT CASE when latitude BETWEEN '10' and '20' then '10 to 20' WHEN latitude between '20' and '30' then '20 to 30' WHEN latitude between '30' and '40' then '30 to 40' WHEN latitude between '40' and '50' then '40 to 50' ELSE '50+' END AS latitude from QUAKES1) T  GROUP BY T.latitude"
+
+    # query1 = "SELECT nst, gap from [QUAKES1] where net='ci'"
+    query1 = "SELECT nst, gap from QUAKES1 WHERE  net =  '" + str(v1) + "' and nst between '" + str(v2) + "' and '" + str(v3) + "'"
+    cursor.execute(query1)
+    r1 = cursor.fetchall()
+    rows1 = ([['MagnitudeType','nst']])
+    # rows1 = ([['head1', 'Number of Earthquakes']])
+    for val in r1:
+        rows1.append([val[0],val[1]])
+    return render_template('scatter.html', rows=rows1)
+
+       Show a scatter chart
+            </h4> <br>
+            <form action="/scatter1" method="post">
+                   <label> Net Value : </label> <input type="text" name="v1" ><br>
+                    <label> minimum range : </label> <input type="text" name="v2" ><br>
+                   <label> maximum range : </label> <input type="text" name="v3" >
+                <input type="submit" value="Show scatter" class="btn btn-secondary">
+            </form>
+            <br>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link href="static/styles.css" rel="stylesheet">
+      <title>Scatter Chart</title>
+  </head>
+  <body>
+    <div class="container">
+
+        <h1> neelam Makwana </h1>
+        <h1> 1001453836 </h1>
+      <br>
+
+      <center>
+          <div id="scatterchart" style="width: 900px; height: 500px;"></div>
+      </center>
+
+      <br>
+      <br>
+    </div>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+          google.charts.load('current', {'packages':['corechart']});
+          google.charts.setOnLoadCallback(drawChart);
+
+          function drawChart() {
+
+            var data = google.visualization.arrayToDataTable({{ rows|safe }});
+
+            var options = {
+                title: ' Scatter chart showing Number of Earthquakes with differnet magnitudes ',
+                hAxis: {title: 'Nst'},
+                vAxis: {title: 'Gap'},
+                legend: 'none',
+                pointsVisible: true
+            };
+            var chart = new google.visualization.ScatterChart(document.getElementById('scatterchart'));
+
+            chart.draw(data, options);
+          }
+        </script>
+  </body>
+</html>
+
+ 11. When you are finished with any part, please submit a link (a link to your Azure app) 
+     to Teams, and we will try to demo it, then when you are FINISHED 
+     (or at the end of the class) please submit code to Teams, and terminate your app.
+
+ Good Luck!   
+

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7eacf37a-c1be-457e-88f9-a8222cfa3e1e" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="gomidb.database.windows.net" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="gomidb.database.windows.net" type="feb32156:DbDataSourceImpl" />
+        <item name="mydb1: database" type="ccb7ac2a:MsImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="gomidb.database.windows.net" type="feb32156:DbDataSourceImpl" />
+        <item name="mydb1: database" type="ccb7ac2a:MsImplModel$Database" />
+        <item name="dbo: schema" type="2865ee2e:MsImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="gomidb.database.windows.net" type="feb32156:DbDataSourceImpl" />
+        <item name="mydb1: database" type="ccb7ac2a:MsImplModel$Database" />
+        <item name="dbo: schema" type="2865ee2e:MsImplModel$Schema" />
+        <item name="earthq: table" type="63ab2ba1:MsImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="gomidb.database.windows.net" type="feb32156:DbDataSourceImpl" />
+        <item name="mydb1: database" type="ccb7ac2a:MsImplModel$Database" />
+        <item name="dbo: schema" type="2865ee2e:MsImplModel$Schema" />
+        <item name="tita: table" type="63ab2ba1:MsImplModel$Table" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1ZgCJZZBG6KjboAx3beGERLLnBH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="azure" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="asg3" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="asg3" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="asg3" type="Python.FlaskServer">
+      <module name="asg3" />
+      <option name="target" value="$PROJECT_DIR$/main.py" />
+      <option name="targetType" value="PATH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7eacf37a-c1be-457e-88f9-a8222cfa3e1e" name="Default Changelist" comment="" />
+      <created>1560813193265</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1560813193265</updated>
+      <workItem from="1560813194454" duration="109086000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="109086000" />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="471" y="108" key="#main" timestamp="1585251424749">
+      <screen x="0" y="23" width="1440" height="840" />
+    </state>
+    <state x="471" y="108" key="#main/0.23.1440.840@0.23.1440.840" timestamp="1585251424749" />
+    <state width="1316" height="257" key="GridCell.Tab.0.bottom" timestamp="1585251711776">
+      <screen x="0" y="23" width="1440" height="840" />
+    </state>
+    <state width="1316" height="257" key="GridCell.Tab.0.bottom/0.23.1440.840@0.23.1440.840" timestamp="1585251711776" />
+    <state width="1316" height="257" key="GridCell.Tab.0.center" timestamp="1585251711774">
+      <screen x="0" y="23" width="1440" height="840" />
+    </state>
+    <state width="1316" height="257" key="GridCell.Tab.0.center/0.23.1440.840@0.23.1440.840" timestamp="1585251711774" />
+    <state width="1316" height="257" key="GridCell.Tab.0.left" timestamp="1585251711773">
+      <screen x="0" y="23" width="1440" height="840" />
+    </state>
+    <state width="1316" height="257" key="GridCell.Tab.0.left/0.23.1440.840@0.23.1440.840" timestamp="1585251711773" />
+    <state width="1316" height="257" key="GridCell.Tab.0.right" timestamp="1585251711775">
+      <screen x="0" y="23" width="1440" height="840" />
+    </state>
+    <state width="1316" height="257" key="GridCell.Tab.0.right/0.23.1440.840@0.23.1440.840" timestamp="1585251711775" />
+    <state width="1316" height="257" key="GridCell.Tab.1.bottom" timestamp="1585251711779">
+      <screen x="0" y="23" width="1440" height="840" />
+    </state>
+    <state width="1316" height="257" key="GridCell.Tab.1.bottom/0.23.1440.840@0.23.1440.840" timestamp="1585251711779" />
+    <state width="1316" height="257" key="GridCell.Tab.1.center" timestamp="1585251711778">
+      <screen x="0" y="23" width="1440" height="840" />
+    </state>
+    <state width="1316" height="257" key="GridCell.Tab.1.center/0.23.1440.840@0.23.1440.840" timestamp="1585251711778" />
+    <state width="1316" height="257" key="GridCell.Tab.1.left" timestamp="1585251711777">
+      <screen x="0" y="23" width="1440" height="840" />
+    </state>
+    <state width="1316" height="257" key="GridCell.Tab.1.left/0.23.1440.840@0.23.1440.840" timestamp="1585251711777" />
+    <state width="1316" height="257" key="GridCell.Tab.1.right" timestamp="1585251711779">
+      <screen x="0" y="23" width="1440" height="840" />
+    </state>
+    <state width="1316" height="257" key="GridCell.Tab.1.right/0.23.1440.840@0.23.1440.840" timestamp="1585251711779" />
+    <state x="271" y="66" key="SettingsEditor" timestamp="1585444191247">
+      <screen x="0" y="23" width="1440" height="840" />
+    </state>
+    <state x="271" y="66" key="SettingsEditor/0.23.1440.840@0.23.1440.840" timestamp="1585444191247" />
+    <state x="441" y="259" key="com.intellij.ide.util.TipDialog" timestamp="1585443845108">
+      <screen x="0" y="23" width="1440" height="840" />
+    </state>
+    <state x="441" y="259" key="com.intellij.ide.util.TipDialog/0.23.1440.840@0.23.1440.840" timestamp="1585443845108" />
+  </component>
+</project>
